@@ -39,10 +39,10 @@ function App() {
 
     useEffect(() => {
         if (selectedOne && selectedTwo) {
-            setScore(prevScore => prevScore + 1)
             setDisabled(true);
 
             if (selectedOne.path === selectedTwo.path) {
+
                 setCards(prevCards =>{
                     return prevCards.map((card) => {
                         if (card.path === selectedOne.path) {
@@ -64,7 +64,7 @@ function App() {
         setSelectedOne(null);
         setSelectedTwo(null);
         setDisabled(false);
-        setScore(0);
+        setScore(prevScore => prevScore + 1)
     }
 
     return (
